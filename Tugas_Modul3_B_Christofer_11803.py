@@ -69,7 +69,6 @@ if uploaded_file is not None:
     st.write("<h3 style='text-align: center; color: #0073e6;'>Data yang diupload:</h3>", unsafe_allow_html=True)
     st.dataframe(input_data)
 
-    model_directory = r'C:\Users\H P\OneDrive\Documents\mldl\Tugas3_B_11803'
     model_path = os.path.join(model_directory, r'GBR_IPK_model.pkl')
 
     if os.path.exists(model_path):
