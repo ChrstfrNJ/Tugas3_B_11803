@@ -68,8 +68,8 @@ if uploaded_file is not None:
     input_data = pd.read_csv(uploaded_file)
     st.write("<h3 style='text-align: center; color: #0073e6;'>Data yang diupload:</h3>", unsafe_allow_html=True)
     st.dataframe(input_data)
-
-    model_path = r'GBR_IPK_model.pkl'
+        
+    model_path = r'SVR_IPK_model.pkl'
 
     if os.path.exists(model_path):
         with open(model_path, 'rb') as f:
@@ -77,7 +77,7 @@ if uploaded_file is not None:
 
         scaler = loaded_model[0]
         feature_selector = loaded_model[1]
-        GBR_model = loaded_model[2]
+        SVR_model = loaded_model[2]
 
         st.sidebar.subheader("Masukkan Nilai")
         mtk1 = st.sidebar.number_input("Nilai Matematika Semester 1.1", 60.0, 100.0)
@@ -115,7 +115,7 @@ if uploaded_file is not None:
         input_data_selected = feature_selector.transform(input_data_scaled)
 
         if st.sidebar.button("Prediksi!"):
-            GBR_model_predict = GBR_model.predict(input_data_selected)
-            st.markdown(f"<h3 style='text-align: center; color: #4CAF50;'>Prediksi IPK adalah: {GBR_model_predict[0]:.2f}</h3>", unsafe_allow_html=True)
+            SVR_model_predict = SVR_model.predict(input_data_selected)
+            st.markdown(f"<h3 style='text-align: center; color: #4CAF50;'>Prediksi IPK adalah: {SVR_model_predict[0]:.2f}</h3>", unsafe_allow_html=True)
     else:
         st.error("Model tidak ditemukan, silakan cek file model di direktori.")
