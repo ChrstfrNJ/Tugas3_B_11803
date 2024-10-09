@@ -55,7 +55,7 @@ st.markdown("""
 
 st.markdown("""
     <div class="center">
-        <img scr="https://media.tenor.com/oqJo9GcbfjYAAAAi/welcome-images-server.gif" alt"Welcome Image">
+        <img src="https://media.tenor.com/oqJo9GcbfjYAAAAi/welcome-images-server.gif" alt"Welcome Image">
     </div>
     """, unsafe_allow_html=True)
 st.markdown("<h1 style='text-align: center; color: #4CAF50;'>Prediksi IPK - 1803</h1>", unsafe_allow_html=True)
